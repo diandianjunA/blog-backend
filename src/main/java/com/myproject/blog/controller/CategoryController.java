@@ -20,6 +20,10 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
+    /**
+     * 获取文章分类数据
+     * @return 所有分类的集合
+     */
     @GetMapping("/list")
     public R<List<Category>> list(){
         LambdaQueryWrapper<Category> categoryLambdaQueryWrapper = new LambdaQueryWrapper<>();

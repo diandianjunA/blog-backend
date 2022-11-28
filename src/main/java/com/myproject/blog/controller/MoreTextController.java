@@ -24,9 +24,16 @@ public class MoreTextController {
     @Autowired
     private MoreTextService moreTextService;
 
+    /**
+     * 获取分页的文章信息
+     * @param pageNum 第几页
+     * @param key 查询关键字
+     * @return 分页数据
+     */
     @GetMapping("/list")
     public R<PageInfo<MoreText>> list(Integer pageNum,String key){
         List<MoreText> list;
+        //开启分页
         PageHelper.startPage(pageNum,6);
         LambdaQueryWrapper<MoreText> textLambdaQueryWrapper = new LambdaQueryWrapper<>();
         textLambdaQueryWrapper.orderByDesc(MoreText::getUpdateTime);

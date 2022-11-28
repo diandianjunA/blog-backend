@@ -23,9 +23,16 @@ public class TextController {
     @Autowired
     private TextService textService;
 
+    /**
+     * 直接获取分页文章信息
+     * @param pageNum 第几页
+     * @param key 关键字
+     * @return 分页信息
+     */
     @GetMapping("/getText")
     public R<PageInfo<Text>> getText(Integer pageNum, String key){
         List<Text> list;
+        //开启分页
         PageHelper.startPage(pageNum,6);
         LambdaQueryWrapper<Text> textLambdaQueryWrapper = new LambdaQueryWrapper<>();
         textLambdaQueryWrapper.orderByDesc(Text::getUpdateTime);
@@ -37,6 +44,13 @@ public class TextController {
         return R.success(pageInfo);
     }
 
+    /**
+     * 根据分类id获取对应分类的文章
+     * @param pageNum 第几页
+     * @param categoryId 分类id
+     * @param key 查询关键字
+     * @return
+     */
     @GetMapping("/categoryText")
     public R<PageInfo<Text>> getTextByCategory(Integer pageNum,Integer categoryId, String key){
         PageHelper.startPage(pageNum,6);

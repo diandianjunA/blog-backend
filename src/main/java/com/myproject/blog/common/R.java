@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 通用返回结果类
+ * 通用给前端返回的结果类
  * @param <T>
  */
 @Data

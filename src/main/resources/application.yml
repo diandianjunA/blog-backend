@@ -1,3 +1,4 @@
+# 配置分页插件
 pagehelper:
   helper-dialect: mysql
   reasonable: true

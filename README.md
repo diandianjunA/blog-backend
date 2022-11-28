@@ -176,6 +176,15 @@ watch:{
 </dependency>
 ```
 
+配置分页插件
+```yaml
+# 配置分页插件
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+```
+
 在查询方法前
 
 ```java
